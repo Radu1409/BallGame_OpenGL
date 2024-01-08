@@ -30,22 +30,30 @@ void Sphere::draw() {
     //setLightColor(glm::vec3(1.0f, 1.0f, 1.0f));  // Setăm culoarea luminii la alb
 
     glBindVertexArray(vao);
-    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+    // glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(indices.size()), GL_UNSIGNED_INT, 0);
+
     glBindVertexArray(0);
 }
 
 void Sphere::generateSphere() {
     float const R = 1.0f / (float)(rings - 1);
     float const S = 1.0f / (float)(sectors - 1);
-    int r, s;
+    //int r, s;
+    unsigned int r, s;
 
     vertices.resize(rings * sectors * 3);
     std::vector<float>::iterator v = vertices.begin();
     for (r = 0; r < rings; r++)
         for (s = 0; s < sectors; s++) {
-            float const y = sin(-M_PI_2 + M_PI * r * R);
+            /*float const y = sin(-M_PI_2 + M_PI * r * R);
             float const x = cos(2 * M_PI * s * S) * sin(M_PI * r * R);
-            float const z = sin(2 * M_PI * s * S) * sin(M_PI * r * R);
+            float const z = sin(2 * M_PI * s * S) * sin(M_PI * r * R);*/
+
+            float const y = static_cast<float>(sin(-M_PI_2 + M_PI * r * R));
+            float const x = static_cast<float>(cos(2 * M_PI * s * S) * sin(M_PI * r * R));
+            float const z = static_cast<float>(sin(2 * M_PI * s * S) * sin(M_PI * r * R));
+
 
             *v++ = x * radius;
             *v++ = y * radius;

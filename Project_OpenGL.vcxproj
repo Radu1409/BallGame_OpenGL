@@ -24,7 +24,7 @@
     <ProjectGuid>{d9346593-d0b8-4531-a4fa-af9040e89f02}</ProjectGuid>
     <RootNamespace>ProjectOpenGL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>BallGame</ProjectName>
+    <ProjectName>Project_OpenGL</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -85,13 +85,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\shaders;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\resource;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)src;$(IncludePath);C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\shaders;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\resource;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -116,13 +116,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\shaders;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\resource;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)src;$(IncludePath);C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\shaders;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\resource;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\src;C:\Users\Lenovo\Documents\Visual Studio 2022\OpenGL\Project_OpenGL\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,9 +143,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Sphere.cpp" />
     <ClCompile Include="src\Table.cpp" />
@@ -158,9 +158,11 @@
     <ClInclude Include="src\Table.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag" />
-    <None Include="default.vert" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
     <None Include="glew32.dll" />
+    <None Include="shaders\default.frag" />
+    <None Include="shaders\default.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

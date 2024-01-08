@@ -39,7 +39,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 
     }
     catch (std::ifstream::failure& e) {
-        std::cout << "Eroare la citirea shader-ului" << std::endl;
+        std::cout << "Eroare la citirea shader-ului" << e.what() << std::endl;
     }
 
     const char* vShaderCode = vertexCode.c_str();
