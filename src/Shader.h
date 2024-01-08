@@ -1,7 +1,6 @@
 ﻿#ifndef SHADER_H
 #define SHADER_H
 
-
 #include <string>
 #include <glm/ext/matrix_float4x4.hpp>
 #include <glm/gtc/type_ptr.hpp>

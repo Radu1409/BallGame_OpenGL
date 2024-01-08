@@ -1,4 +1,3 @@
-// Logger.cpp
 #include <iostream>
 #include <ctime>
 #include "Logger.h"

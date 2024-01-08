@@ -1,13 +1,3 @@
-//#pragma once
-//
-//class Sphere {
-//public:
-//    Sphere();
-//    ~Sphere();
-//
-//    void draw(float radius, int meridians, int parallels);
-//};
-
 #pragma once
 
 #ifndef SPHERE_H

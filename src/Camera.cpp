@@ -1,8 +1,6 @@
 #include "Camera.h"
 #include <iostream>
 
-
-
 Camera::Camera(int width, int height, glm::vec3 position)
 {
 	Camera::width = width;
@@ -11,8 +9,6 @@ Camera::Camera(int width, int height, glm::vec3 position)
 
 	std::cout << width << ", " << height << ", Position: " << position[0]  << ", " << position[1] << ", " << position[2] << std::endl;
 }
-
-
 
 void Camera::updateMatrix(float FOVdeg, float nearPlane, float farPlane)
 {
@@ -34,8 +30,6 @@ void Camera::Matrix(Shader& shader, const char* uniform)
 	// Exports camera matrix
 	glUniformMatrix4fv(glGetUniformLocation(shader.ID, uniform), 1, GL_FALSE, glm::value_ptr(cameraMatrix));
 }
-
-
 
 void Camera::Inputs(GLFWwindow* window)
 {
